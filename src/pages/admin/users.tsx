@@ -1,10 +1,30 @@
-import { Box, Typography } from '@mui/material';
+import Header from '@/components/Header';
+import { Box, Typography, useTheme } from '@mui/material';
+import Head from 'next/head';
 
 const Users = () => {
+  const theme = useTheme();
+  const colors = theme.palette;
+
   return (
-    <Box sx={{ p: 2 }}>
-      <Typography variant="h4">Users</Typography>
-    </Box>
+    <>
+      <Head>
+        <title>Users</title>
+      </Head>
+
+      <Box p={2}>
+        <Box py={2}>
+          <Header title="Users" subtitle="Manage users" />
+        </Box>
+
+        <Box py={4}>
+          {/* <TextField label="Search" variant="outlined" size="small" />
+          <Button variant="contained" color="primary">
+            Search
+          </Button> */}
+        </Box>
+      </Box>
+    </>
   );
 };
 
