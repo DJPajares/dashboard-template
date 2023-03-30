@@ -9,17 +9,17 @@ import {
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettingsOutlined';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
-import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
-import { Box, IconButton, useTheme } from '@mui/material';
+import { Box, IconButton, Typography, useTheme } from '@mui/material';
 import { ColorModeContext } from '@/config/themes';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
+import userDp from '../../../public/assets/images/dp.jpg';
 
 const SideNav = () => {
   const theme = useTheme();
   const colors = theme.palette;
-  const colorMode = useContext(ColorModeContext);
+  // const colorMode = useContext(ColorModeContext);
   const { collapseSidebar, collapsed } = useProSidebar();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -30,21 +30,39 @@ const SideNav = () => {
   };
 
   return (
-    <Box sx={{ display: 'flex', height: '100%' }}>
-      <Sidebar
-        breakPoint="md"
-        collapsedWidth="5rem"
-        width="16rem"
-        backgroundColor={colors.background.default}
-      >
-        <Menu>
+    <Sidebar
+      breakPoint="md"
+      collapsedWidth="5rem"
+      width="16rem"
+      backgroundColor={colors.background.default}
+    >
+      <Box py={1}>
+        <Menu
+          menuItemStyles={{
+            button: () => {
+              return {
+                '&:hover': {
+                  backgroundColor: 'transparent',
+                  color: colors.primary.main
+                }
+              };
+            }
+          }}
+        >
+          {/* HEADER */}
           <MenuItem>
             <Box
               display="flex"
               justifyContent="space-between"
               alignItems="center"
             >
-              {!collapsed && <Box>wAPP</Box>}
+              {!collapsed && (
+                <Box pr={2}>
+                  <Typography fontSize={20} fontFamily="Sigmar One">
+                    WAPP
+                  </Typography>
+                </Box>
+              )}
               <Box>
                 <IconButton onClick={() => collapseSidebar()}>
                   <MenuOutlinedIcon />
@@ -53,53 +71,103 @@ const SideNav = () => {
             </Box>
           </MenuItem>
 
+          {/* USER */}
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              py: 1
+            }}
+          >
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                py: 1
+              }}
+            >
+              <Image
+                src={userDp}
+                alt="user display picture"
+                height={collapsed ? 30 : 100}
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  borderRadius: '50%'
+                }}
+              />
+            </Box>
+            {!collapsed && (
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  py: 1
+                }}
+              >
+                <Typography
+                  variant="h5"
+                  color={colors.primary.main}
+                  fontWeight={700}
+                >
+                  Dall-e
+                </Typography>
+              </Box>
+            )}
+          </Box>
+
+          {/* DASHBOARD */}
           <MenuItem
             icon={<HomeOutlinedIcon />}
             rootStyles={{ backgroundColor: colors.background.default }}
             onClick={() => router.push('/')}
           >
-            Dashboard
+            <Typography sx={{ fontSize: '0.9rem' }}>Dashboard</Typography>
           </MenuItem>
 
+          {/* ADMIN */}
           <SubMenu
             icon={<AdminPanelSettingsOutlinedIcon />}
             title="Components"
             label="Admin"
+            rootStyles={{ fontSize: '0.9rem' }}
             defaultOpen
           >
             <MenuItem
               rootStyles={{ backgroundColor: colors.background.default }}
               onClick={() => router.push('/admin/users')}
             >
-              Users
+              <Typography variant="subtitle2">Users</Typography>
             </MenuItem>
             <MenuItem
               rootStyles={{ backgroundColor: colors.background.default }}
             >
-              Contacts Information
+              <Typography variant="subtitle2">Contacts</Typography>
             </MenuItem>
           </SubMenu>
 
+          {/* FORMS */}
           <SubMenu
             icon={<DescriptionOutlinedIcon />}
             title="Components"
-            label="Pages"
+            label="Forms"
+            rootStyles={{ fontSize: '0.9rem' }}
             defaultOpen
           >
             <MenuItem
               rootStyles={{ backgroundColor: colors.background.default }}
             >
-              Profile Form
+              <Typography variant="subtitle2">User Form</Typography>
             </MenuItem>
             <MenuItem
               rootStyles={{ backgroundColor: colors.background.default }}
             >
-              Login Form
+              <Typography variant="subtitle2">Inventory Form</Typography>
             </MenuItem>
           </SubMenu>
         </Menu>
-      </Sidebar>
-    </Box>
+      </Box>
+    </Sidebar>
   );
 };
 
