@@ -1,4 +1,4 @@
-import Header from '@/components/Header';
+import Header from '@/components/global/Header';
 import { Box, Typography, useTheme } from '@mui/material';
 import Head from 'next/head';
 

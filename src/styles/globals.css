@@ -15,5 +15,5 @@ body,
 
 .app {
   display: flex;
-  position: fixed;
+  position: relative;
 }

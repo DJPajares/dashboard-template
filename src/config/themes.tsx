@@ -384,21 +384,6 @@ export const themeSettings = (mode: DarkModeProps) => {
   return {
     palette: {
       mode: mode,
-      // ...{
-      //   // palette values for dark mode
-      //   primary: {
-      //     main: colors.teal[500],
-      //     dark: colors.teal[500],
-      //     light: colors.orange[800]
-      //   },
-      //   secondary: {
-      //     main: colors.orange[800]
-      //   },
-      //   background: {
-      //     default: isDarkMode ? colors.navyBlue[800] : colors.white,
-      //     paper: isDarkMode ? colors.navyBlue[700] : colors.grey[100]
-      //   }
-      // }
       ...(mode === 'dark'
         ? {
             // palette values for dark mode
