@@ -15,6 +15,7 @@ import { ColorModeContext } from '@/config/themes';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import userDp from '../../../public/assets/images/dp.jpg';
+import Avatar from './Avatar';
 
 const SideNav = () => {
   const theme = useTheme();
@@ -86,16 +87,7 @@ const SideNav = () => {
                 py: 1
               }}
             >
-              <Image
-                src={userDp}
-                alt="user display picture"
-                height={collapsed ? 30 : 100}
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  borderRadius: '50%'
-                }}
-              />
+              <Avatar src={userDp} height={collapsed ? 30 : 100} />
             </Box>
             {!collapsed && (
               <Box
