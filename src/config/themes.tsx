@@ -419,6 +419,40 @@ export const themeSettings = (mode: DarkModeProps) => {
               secondary: colors.grey[600]
             }
           })
+    },
+    typography: {
+      fontFamily: 'Source Sans Pro, sans-serif',
+      h1: {
+        fontWeight: 700,
+        fontSize: 40
+        // lineHeight: 1.167
+      },
+      h2: {
+        fontWeight: 700,
+        fontSize: 32,
+        lineHeight: 1.2
+      },
+      h3: {
+        fontWeight: 700,
+        fontSize: 24,
+        lineHeight: 1.167
+        // letterSpacing: '0em'
+      },
+      h4: {
+        fontWeight: 700,
+        fontSize: 20,
+        lineHeight: 1.2
+      },
+      h5: {
+        fontWeight: 700,
+        fontSize: 16,
+        lineHeight: 1.2
+      },
+      h6: {
+        fontWeight: 700,
+        fontSize: 14,
+        lineHeight: 1.2
+      }
     }
   };
 };
