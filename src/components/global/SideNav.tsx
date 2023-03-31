@@ -57,7 +57,7 @@ const SideNav = () => {
               alignItems="center"
             >
               {!collapsed && (
-                <Box pr={2}>
+                <Box pr={2} onClick={() => router.push('/')}>
                   <Typography fontSize={20} fontFamily="Sigmar One">
                     WAPP
                   </Typography>
