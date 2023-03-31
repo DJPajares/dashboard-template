@@ -4,114 +4,24 @@ import { ResponsiveBar } from '@nivo/bar';
 import { useTheme } from '@mui/system';
 import { ResponsivePie } from '@nivo/pie';
 import { useMediaQuery } from '@mui/material';
+import { themeCharts } from '@/config/themeCharts';
 
 const PieChart = () => {
   const theme = useTheme();
   const colors = theme.palette;
   const width = useMediaQuery('width: 600px');
 
-  const themeNivo = {
-    // background: '#ffffff',
-    // textColor: '#333333',
-    fontSize: 11,
-    axis: {
-      domain: {
-        line: {
-          stroke: colors.text.primary,
-          strokeWidth: 1
-        }
-      },
-      legend: {
-        text: {
-          fontSize: 12,
-          fill: colors.primary.main
-        }
-      },
-      ticks: {
-        line: {
-          stroke: colors.text.primary,
-          strokeWidth: 1
-        },
-        text: {
-          fontSize: 11,
-          fill: colors.text.primary
-        }
-      }
-    },
-    grid: {
-      line: {
-        stroke: colors.text.primary,
-        strokeWidth: 1
-      }
-    },
-    legends: {
-      title: {
-        text: {
-          fontSize: 11,
-          fill: colors.text.primary
-        }
-      },
-      text: {
-        fontSize: 11,
-        fill: colors.text.primary
-      },
-      ticks: {
-        line: {},
-        text: {
-          fontSize: 10,
-          fill: colors.text.primary
-        }
-      }
-    },
-    annotations: {
-      text: {
-        fontSize: 13,
-        fill: colors.text.primary,
-        outlineWidth: 2,
-        outlineColor: colors.background.default,
-        outlineOpacity: 1
-      },
-      link: {
-        stroke: colors.text.primary,
-        strokeWidth: 1,
-        outlineWidth: 2,
-        outlineColor: colors.background.default,
-        outlineOpacity: 1
-      },
-      outline: {
-        stroke: colors.text.primary,
-        strokeWidth: 2,
-        outlineWidth: 2,
-        outlineColor: colors.background.default,
-        outlineOpacity: 1
-      },
-      symbol: {
-        fill: colors.text.primary,
-        outlineWidth: 2,
-        outlineColor: colors.background.default,
-        outlineOpacity: 1
-      }
-    },
-    tooltip: {
-      container: {
-        background: colors.background.default,
-        color: colors.text.primary,
-        fontSize: 12
-      },
-      basic: {},
-      chip: {},
-      table: {},
-      tableCell: {},
-      tableCellValue: {}
-    }
-  };
-
   return (
     <ResponsivePie
       data={mockPieData}
-      theme={themeNivo}
+      theme={themeCharts({
+        textColor: colors.text.primary,
+        primaryColor: colors.primary.main,
+        backgroundColor: colors.background.default
+      })}
+      motionConfig="wobbly"
       margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
-      innerRadius={0.5}
+      innerRadius={0.4} // add to make donut
       padAngle={0.7}
       cornerRadius={3}
       activeOuterRadiusOffset={8}

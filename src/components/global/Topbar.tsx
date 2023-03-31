@@ -14,7 +14,17 @@ const TopBar = () => {
   const colorMode = useContext(ColorModeContext);
 
   return (
-    <Box style={styles.container}>
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: 2,
+        backgroundColor: colors.background.default
+        // position: 'fixed',
+        // top: 0
+      }}
+    >
       <Box
         sx={{
           display: 'flex',
@@ -51,14 +61,3 @@ const TopBar = () => {
 };
 
 export default TopBar;
-
-const styles = {
-  container: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '0 1rem',
-    height: '4rem',
-    backgroundColor: 'primary.main'
-  }
-};

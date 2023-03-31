@@ -204,3 +204,276 @@ export const mockPieData = [
     // color: 'hsl(68, 70%, 50%)'
   }
 ];
+
+export const mockLineData = [
+  {
+    id: 'japan',
+    color: 'hsl(323, 70%, 50%)',
+    data: [
+      {
+        x: 'plane',
+        y: 49
+      },
+      {
+        x: 'helicopter',
+        y: 64
+      },
+      {
+        x: 'boat',
+        y: 84
+      },
+      {
+        x: 'train',
+        y: 34
+      },
+      {
+        x: 'subway',
+        y: 252
+      },
+      {
+        x: 'bus',
+        y: 44
+      },
+      {
+        x: 'car',
+        y: 262
+      },
+      {
+        x: 'moto',
+        y: 287
+      },
+      {
+        x: 'bicycle',
+        y: 58
+      },
+      {
+        x: 'horse',
+        y: 164
+      },
+      {
+        x: 'skateboard',
+        y: 115
+      },
+      {
+        x: 'others',
+        y: 191
+      }
+    ]
+  },
+  {
+    id: 'france',
+    color: 'hsl(47, 70%, 50%)',
+    data: [
+      {
+        x: 'plane',
+        y: 53
+      },
+      {
+        x: 'helicopter',
+        y: 89
+      },
+      {
+        x: 'boat',
+        y: 214
+      },
+      {
+        x: 'train',
+        y: 154
+      },
+      {
+        x: 'subway',
+        y: 157
+      },
+      {
+        x: 'bus',
+        y: 165
+      },
+      {
+        x: 'car',
+        y: 181
+      },
+      {
+        x: 'moto',
+        y: 278
+      },
+      {
+        x: 'bicycle',
+        y: 51
+      },
+      {
+        x: 'horse',
+        y: 39
+      },
+      {
+        x: 'skateboard',
+        y: 16
+      },
+      {
+        x: 'others',
+        y: 260
+      }
+    ]
+  },
+  {
+    id: 'us',
+    color: 'hsl(17, 70%, 50%)',
+    data: [
+      {
+        x: 'plane',
+        y: 298
+      },
+      {
+        x: 'helicopter',
+        y: 293
+      },
+      {
+        x: 'boat',
+        y: 191
+      },
+      {
+        x: 'train',
+        y: 174
+      },
+      {
+        x: 'subway',
+        y: 51
+      },
+      {
+        x: 'bus',
+        y: 230
+      },
+      {
+        x: 'car',
+        y: 152
+      },
+      {
+        x: 'moto',
+        y: 155
+      },
+      {
+        x: 'bicycle',
+        y: 140
+      },
+      {
+        x: 'horse',
+        y: 160
+      },
+      {
+        x: 'skateboard',
+        y: 266
+      },
+      {
+        x: 'others',
+        y: 163
+      }
+    ]
+  },
+  {
+    id: 'germany',
+    color: 'hsl(102, 70%, 50%)',
+    data: [
+      {
+        x: 'plane',
+        y: 221
+      },
+      {
+        x: 'helicopter',
+        y: 204
+      },
+      {
+        x: 'boat',
+        y: 276
+      },
+      {
+        x: 'train',
+        y: 297
+      },
+      {
+        x: 'subway',
+        y: 43
+      },
+      {
+        x: 'bus',
+        y: 154
+      },
+      {
+        x: 'car',
+        y: 286
+      },
+      {
+        x: 'moto',
+        y: 221
+      },
+      {
+        x: 'bicycle',
+        y: 97
+      },
+      {
+        x: 'horse',
+        y: 251
+      },
+      {
+        x: 'skateboard',
+        y: 29
+      },
+      {
+        x: 'others',
+        y: 135
+      }
+    ]
+  },
+  {
+    id: 'norway',
+    color: 'hsl(317, 70%, 50%)',
+    data: [
+      {
+        x: 'plane',
+        y: 139
+      },
+      {
+        x: 'helicopter',
+        y: 103
+      },
+      {
+        x: 'boat',
+        y: 216
+      },
+      {
+        x: 'train',
+        y: 119
+      },
+      {
+        x: 'subway',
+        y: 63
+      },
+      {
+        x: 'bus',
+        y: 266
+      },
+      {
+        x: 'car',
+        y: 41
+      },
+      {
+        x: 'moto',
+        y: 272
+      },
+      {
+        x: 'bicycle',
+        y: 165
+      },
+      {
+        x: 'horse',
+        y: 107
+      },
+      {
+        x: 'skateboard',
+        y: 122
+      },
+      {
+        x: 'others',
+        y: 228
+      }
+    ]
+  }
+];
