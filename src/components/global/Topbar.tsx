@@ -5,6 +5,8 @@ import {
   IconButton,
   InputBase,
   Toolbar,
+  alpha,
+  styled,
   useTheme
 } from '@mui/material';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
@@ -16,6 +18,24 @@ import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import { useContext } from 'react';
 import { useProSidebar } from 'react-pro-sidebar';
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: 'inherit',
+  '& .MuiInputBase-input': {
+    padding: theme.spacing(1, 1, 1, 0),
+    color: theme.palette.text.primary,
+    // vertical padding + font size from searchIcon
+    paddingLeft: '1em',
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      width: '12ch',
+      '&:focus': {
+        width: '20ch'
+      }
+    }
+  }
+}));
 
 const TopBar = () => {
   const theme = useTheme();
@@ -30,7 +50,7 @@ const TopBar = () => {
           display: 'flex',
           justifyContent: 'space-between',
           backgroundColor: colors.background.default,
-          px: 1
+          px: 2
         }}
         disableGutters
       >
@@ -39,19 +59,27 @@ const TopBar = () => {
             <MenuOutlinedIcon />
           </IconButton>
         )}
+
         <Box
           sx={{
             display: 'flex',
             alignItems: 'center',
+            borderRadius: 0.5,
             backgroundColor: colors.background.paper,
-            borderRadius: 0.5
+            '&:hover': {
+              backgroundColor: alpha(colors.background.paper, 0.5)
+            }
           }}
         >
-          <InputBase placeholder="Search..." sx={{ px: 1 }} />
+          <StyledInputBase
+            placeholder="Search…"
+            inputProps={{ 'aria-label': 'search' }}
+          />
           <IconButton>
             <SearchIcon />
           </IconButton>
         </Box>
+
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <IconButton onClick={colorMode.toggleColorMode}>
             {theme.palette.mode === 'dark' ? (
