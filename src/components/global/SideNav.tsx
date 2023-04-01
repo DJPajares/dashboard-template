@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import {
   Sidebar,
   Menu,
@@ -21,18 +21,13 @@ const SideNav = () => {
   const theme = useTheme();
   const colors = theme.palette;
   // const colorMode = useContext(ColorModeContext);
-  const { collapseSidebar, collapsed } = useProSidebar();
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const { collapseSidebar, collapsed, broken } = useProSidebar();
 
   const router = useRouter();
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
   return (
     <Sidebar
-      breakPoint="md"
+      breakPoint="xs"
       collapsedWidth="5rem"
       width="16rem"
       backgroundColor={colors.background.default}
@@ -64,11 +59,13 @@ const SideNav = () => {
                   </Typography>
                 </Box>
               )}
-              <Box>
-                <IconButton onClick={() => collapseSidebar()}>
-                  <MenuOutlinedIcon />
-                </IconButton>
-              </Box>
+              {!broken && (
+                <Box>
+                  <IconButton onClick={() => collapseSidebar()}>
+                    <MenuOutlinedIcon />
+                  </IconButton>
+                </Box>
+              )}
             </Box>
           </MenuItem>
 
