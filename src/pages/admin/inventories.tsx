@@ -13,14 +13,6 @@ const Inventories = () => {
     { field: 'name', headerName: 'Name', width: 150 },
     { field: 'price', headerName: 'Price', width: 150 },
     { field: 'quantity', headerName: 'Quantity', width: 150 }
-    // {
-    //   field: 'image',
-    //   headerName: 'Image',
-    //   width: 150,
-    //   renderCell: (params) => (
-    //     <img src={params.value} alt={params.row.name} style={{ height: 50 }} />
-    //   )
-    // }
   ];
 
   return (

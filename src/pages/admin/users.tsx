@@ -1,5 +1,5 @@
 import Header from '@/components/global/Header';
-import { Box, Typography, useTheme } from '@mui/material';
+import { Avatar, Box, Typography, useTheme } from '@mui/material';
 import { DataGrid, GridColDef, GridRowsProp } from '@mui/x-data-grid';
 import Head from 'next/head';
 import { mockDataUsers } from '@/data/mockData';
@@ -9,7 +9,14 @@ const Users = () => {
   const colors = theme.palette;
 
   const columns: GridColDef[] = [
-    { field: 'id', headerName: 'ID', width: 70 },
+    // { field: 'id', headerName: 'ID', width: 70 },
+    {
+      field: 'image',
+      headerName: 'Image',
+      width: 100,
+      sortable: false,
+      renderCell: (params) => <Avatar src={params.value} alt="user" />
+    },
     { field: 'firstName', headerName: 'First name', width: 130 },
     { field: 'lastName', headerName: 'Last name', width: 130 },
     { field: 'role', headerName: 'Role', width: 300 },

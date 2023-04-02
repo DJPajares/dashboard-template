@@ -5,7 +5,8 @@ export const mockDataUsers = [
     lastName: 'Snow',
     age: 25,
     role: 'King in the North',
-    image: 'https://i.imgur.com/4YQ9Z9r.jpg'
+    image:
+      'https://i.pinimg.com/originals/63/ee/03/63ee03fb800c1d3ebbd22351d14df071.png'
   },
   {
     id: 2,
@@ -13,7 +14,8 @@ export const mockDataUsers = [
     lastName: 'Stark',
     age: 18,
     role: '',
-    image: 'https://i.imgur.com/4YQ9Z9r.jpg'
+    image:
+      'https://media.comicbook.com/uploads1/2015/03/arya-stark-612x380-126932.jpg'
   },
   {
     id: 3,
@@ -21,7 +23,8 @@ export const mockDataUsers = [
     lastName: 'Stark',
     age: 20,
     role: '',
-    image: 'https://i.imgur.com/4YQ9Z9r.jpg'
+    image:
+      'https://i.pinimg.com/originals/f7/87/b5/f787b59be955c86e3363b8c27d8fb1e8.jpg'
   },
   {
     id: 4,
@@ -29,7 +32,8 @@ export const mockDataUsers = [
     lastName: 'Stark',
     age: 18,
     role: '',
-    image: 'https://i.imgur.com/4YQ9Z9r.jpg'
+    image:
+      'https://static.wikia.nocookie.net/gameofthrones/images/8/81/KingBran.PNG'
   },
   {
     id: 5,
@@ -37,7 +41,8 @@ export const mockDataUsers = [
     lastName: 'Lannister',
     age: 35,
     role: 'Queen of the Seven Kingdoms',
-    image: 'https://i.imgur.com/4YQ9Z9r.jpg'
+    image:
+      'https://i.pinimg.com/originals/fe/84/1c/fe841c7c4648303f84d67583fd6dc516.jpg'
   },
   {
     id: 6,
@@ -45,7 +50,8 @@ export const mockDataUsers = [
     lastName: 'Lannister',
     age: 35,
     role: 'Lord Commander of the Kingsguard',
-    image: 'https://i.imgur.com/4YQ9Z9r.jpg'
+    image:
+      'https://images.squarespace-cdn.com/content/v1/52fc05c9e4b08fc45bd99090/1503930325768-BP9P3WHN0Z2GTX82UNL5/image-asset.jpeg'
   },
   {
     id: 7,
@@ -53,7 +59,7 @@ export const mockDataUsers = [
     lastName: 'Lannister',
     age: 35,
     role: 'Hand of the King',
-    image: 'https://i.imgur.com/4YQ9Z9r.jpg'
+    image: 'https://metro.co.uk/wp-content/uploads/2018/07/tyrionlanniter.jpg'
   }
 ];
 
