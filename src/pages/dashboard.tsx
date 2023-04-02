@@ -2,7 +2,7 @@ import BarChart from '../components/charts/BarChart';
 import LineChart from '../components/charts/LineChart';
 import PieChart from '../components/charts/PieChart';
 import Header from '@/components/global/Header';
-import { Box, Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, useMediaQuery, useTheme } from '@mui/material';
 import Head from 'next/head';
 import Card from '@/components/charts/Card';
 
