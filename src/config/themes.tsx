@@ -424,8 +424,8 @@ export const themeSettings = (mode: DarkModeProps) => {
       fontFamily: 'Source Sans Pro, sans-serif',
       h1: {
         fontWeight: 700,
-        fontSize: 40
-        // lineHeight: 1.167
+        fontSize: 40,
+        lineHeight: 1.2
       },
       h2: {
         fontWeight: 700,
@@ -435,7 +435,7 @@ export const themeSettings = (mode: DarkModeProps) => {
       h3: {
         fontWeight: 700,
         fontSize: 24,
-        lineHeight: 1.167
+        lineHeight: 1.2
         // letterSpacing: '0em'
       },
       h4: {
