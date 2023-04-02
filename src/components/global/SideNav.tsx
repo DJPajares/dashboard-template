@@ -1,4 +1,3 @@
-import { useContext, useEffect, useState } from 'react';
 import {
   Sidebar,
   Menu,
@@ -11,18 +10,18 @@ import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettin
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import { Box, IconButton, Typography, useTheme } from '@mui/material';
-import { ColorModeContext } from '@/config/themes';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
-import userDp from '../../../public/assets/images/dp.jpg';
-import Avatar from './Avatar';
+import { Avatar } from '@mui/material';
 
 const SideNav = () => {
   const theme = useTheme();
   const colors = theme.palette;
-  // const colorMode = useContext(ColorModeContext);
   const { collapseSidebar, collapsed, broken } = useProSidebar();
 
+  const userImage =
+    'https://media.gq.com/photos/5caf9c876328030f7944ecc1/1:1/w_3603,h_3603,c_limit/keanu-reeves-gq-cover-may-2019-social.jpg';
+
+  const imageSize = collapsed ? 30 : 100;
   const router = useRouter();
 
   return (
@@ -31,6 +30,7 @@ const SideNav = () => {
       collapsedWidth="5rem"
       width="16rem"
       backgroundColor={colors.background.default}
+      style={{ zIndex: 1150 }}
     >
       <Box py={1}>
         <Menu
@@ -84,7 +84,11 @@ const SideNav = () => {
                 py: 1
               }}
             >
-              <Avatar src={userDp} height={collapsed ? 30 : 100} />
+              <Avatar
+                src={userImage}
+                alt="profile picture"
+                sx={{ height: imageSize, width: imageSize }}
+              />
             </Box>
             {!collapsed && (
               <Box
