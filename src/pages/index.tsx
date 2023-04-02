@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Box } from '@mui/system';
-import Dashboard from './dashboard';
+import Dashboard from './main/dashboard';
 
 export default function Home() {
   return (

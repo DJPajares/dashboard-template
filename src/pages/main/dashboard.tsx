@@ -1,6 +1,6 @@
-import BarChart from '../components/charts/BarChart';
-import LineChart from '../components/charts/LineChart';
-import PieChart from '../components/charts/PieChart';
+import BarChart from '../../components/charts/BarChart';
+import LineChart from '../../components/charts/LineChart';
+import PieChart from '../../components/charts/PieChart';
 import Header from '@/components/global/Header';
 import { Box, useMediaQuery, useTheme } from '@mui/material';
 import Head from 'next/head';
@@ -25,7 +25,12 @@ const Dashboard = () => {
         </Box>
 
         {/* CHARTS */}
-        <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2}>
+        <Box
+          py={4}
+          display="grid"
+          gridTemplateColumns="repeat(12, 1fr)"
+          gap={2}
+        >
           <Box gridColumn="span 4">
             <Card
               title="Costs"

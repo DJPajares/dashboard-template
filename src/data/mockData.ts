@@ -57,6 +57,58 @@ export const mockDataUsers = [
   }
 ];
 
+export const mockDataInvetories = [
+  {
+    id: 1,
+    name: 'Apple',
+    price: 1.5,
+    quantity: 100,
+    image: 'https://i.imgur.com/4YQ9Z9r.jpg'
+  },
+  {
+    id: 2,
+    name: 'Orange',
+    price: 1.5,
+    quantity: 100,
+    image: 'https://i.imgur.com/4YQ9Z9r.jpg'
+  },
+  {
+    id: 3,
+    name: 'Banana',
+    price: 1.5,
+    quantity: 100,
+    image: 'https://i.imgur.com/4YQ9Z9r.jpg'
+  },
+  {
+    id: 4,
+    name: 'Mango',
+    price: 1.5,
+    quantity: 100,
+    image: 'https://i.imgur.com/4YQ9Z9r.jpg'
+  },
+  {
+    id: 5,
+    name: 'Pineapple',
+    price: 3.0,
+    quantity: 50,
+    image: 'https://i.imgur.com/4YQ9Z9r.jpg'
+  },
+  {
+    id: 6,
+    name: 'Grapefruit',
+    price: 2.0,
+    quantity: 75,
+    image: 'https://i.imgur.com/4YQ9Z9r.jpg'
+  },
+  {
+    id: 7,
+    name: 'Pear',
+    price: 2.5,
+    quantity: 90,
+    image: 'https://i.imgur.com/4YQ9Z9r.jpg'
+  }
+];
+
 export const mockTransactions = [
   {
     txId: '01e4dsa',

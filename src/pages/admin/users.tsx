@@ -19,17 +19,6 @@ const Users = () => {
       type: 'number',
       width: 90
     }
-    // {
-    //   field: 'fullName',
-    //   headerName: 'Full name',
-    //   description: 'This column has a value getter and is not sortable.',
-    //   sortable: false,
-    //   width: 160,
-    //   valueGetter: (params) =>
-    //     `${params.getValue('firstName') || ''} ${
-    //       params.getValue('lastName') || ''
-    //     }`
-    // }
   ];
 
   return (
@@ -44,14 +33,26 @@ const Users = () => {
         </Box>
 
         <Box py={4}>
-          <Box
-            sx={{
-              backgroundColor: colors.background.paper,
-              height: 500,
-              width: '100%'
-            }}
-          >
-            <DataGrid rows={mockDataUsers} columns={columns} />
+          <Box>
+            <DataGrid
+              autoHeight
+              columns={columns}
+              rows={mockDataUsers}
+              sx={{
+                borderColor: colors.background.paper,
+                '& .MuiDataGrid-columnHeaders': {
+                  backgroundColor: colors.background.paper,
+                  borderColor: colors.background.paper
+                },
+                '& .MuiDataGrid-cell': {
+                  borderColor: colors.background.paper
+                },
+                '& .MuiDataGrid-footerContainer': {
+                  backgroundColor: colors.background.paper,
+                  borderColor: colors.background.paper
+                }
+              }}
+            />
           </Box>
         </Box>
       </Box>
