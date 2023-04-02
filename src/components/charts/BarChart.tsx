@@ -1,10 +1,10 @@
-import { ResponsiveBar } from '@nivo/bar';
+import { BarDatum, ResponsiveBar } from '@nivo/bar';
 import { useTheme } from '@mui/system';
 import { themeCharts } from '@/config/themeCharts';
 import { Box, Typography } from '@mui/material';
 
 type BarChartProps = {
-  data: unknown[];
+  data: BarDatum[];
   title: string;
   isMobile?: boolean;
 };

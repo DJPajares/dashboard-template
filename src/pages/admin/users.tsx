@@ -1,6 +1,6 @@
 import Header from '@/components/global/Header';
 import { Box, Typography, useTheme } from '@mui/material';
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { DataGrid, GridColDef, GridRowsProp } from '@mui/x-data-grid';
 import Head from 'next/head';
 import { mockDataUsers } from '@/data/mockData';
 
@@ -12,6 +12,7 @@ const Users = () => {
     { field: 'id', headerName: 'ID', width: 70 },
     { field: 'firstName', headerName: 'First name', width: 130 },
     { field: 'lastName', headerName: 'Last name', width: 130 },
+    { field: 'role', headerName: 'Role', width: 300 },
     {
       field: 'age',
       headerName: 'Age',
@@ -25,8 +26,8 @@ const Users = () => {
     //   sortable: false,
     //   width: 160,
     //   valueGetter: (params) =>
-    //     `${params.getValueAsString('firstName') || ''} ${
-    //       params.getValueAsString('lastName') || ''
+    //     `${params.getValue('firstName') || ''} ${
+    //       params.getValue('lastName') || ''
     //     }`
     // }
   ];
@@ -43,11 +44,15 @@ const Users = () => {
         </Box>
 
         <Box py={4}>
-          <DataGrid rows={mockDataUsers} columns={columns} />
-          {/* <TextField label="Search" variant="outlined" size="small" />
-          <Button variant="contained" color="primary">
-            Search
-          </Button> */}
+          <Box
+            sx={{
+              backgroundColor: colors.background.paper,
+              height: 500,
+              width: '100%'
+            }}
+          >
+            <DataGrid rows={mockDataUsers} columns={columns} />
+          </Box>
         </Box>
       </Box>
     </>

@@ -1,10 +1,10 @@
 import { themeCharts } from '@/config/themeCharts';
 import { Box, Typography } from '@mui/material';
 import { useTheme } from '@mui/system';
-import { ResponsiveLine } from '@nivo/line';
+import { ResponsiveLine, Serie } from '@nivo/line';
 
 type LineChartProps = {
-  data: unknown[];
+  data: Serie[];
   title: string;
   isMobile?: boolean;
 };

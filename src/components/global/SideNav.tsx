@@ -127,9 +127,6 @@ const SideNav = () => {
         <MenuItem rootStyles={{ backgroundColor: colors.background.default }}>
           <Typography variant="subtitle2">User Form</Typography>
         </MenuItem>
-        <MenuItem rootStyles={{ backgroundColor: colors.background.default }}>
-          <Typography variant="subtitle2">Inventory Form</Typography>
-        </MenuItem>
       </SubMenu>
     );
   };
