@@ -107,8 +107,11 @@ const SideNav = () => {
         >
           <Typography variant="subtitle2">Users</Typography>
         </MenuItem>
-        <MenuItem rootStyles={{ backgroundColor: colors.background.default }}>
-          <Typography variant="subtitle2">Contacts</Typography>
+        <MenuItem
+          rootStyles={{ backgroundColor: colors.background.default }}
+          onClick={() => router.push('/admin/inventories')}
+        >
+          <Typography variant="subtitle2">Inventories</Typography>
         </MenuItem>
       </SubMenu>
     );

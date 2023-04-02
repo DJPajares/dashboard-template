@@ -12,18 +12,10 @@ const Header = ({ title, subtitle }: HeaderProps) => {
 
   return (
     <>
-      <Typography
-        variant="h4"
-        fontWeight={700}
-        style={{ textTransform: 'uppercase' }}
-      >
+      <Typography variant="h4" style={{ textTransform: 'uppercase' }}>
         {title}
       </Typography>
-      <Typography
-        variant="subtitle1"
-        fontWeight={600}
-        color={colors.primary.main}
-      >
+      <Typography variant="h6" color={colors.primary.main}>
         {subtitle}
       </Typography>
     </>
