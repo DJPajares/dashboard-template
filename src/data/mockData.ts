@@ -1,14 +1,58 @@
-export const mockDataTeam = [
+export const mockDataUsers = [
   {
     id: 1,
-    name: 'Jon Snow',
+    firstName: 'Jon',
+    lastName: 'Snow',
+    age: 25,
     role: 'King in the North',
     image: 'https://i.imgur.com/4YQ9Z9r.jpg'
   },
   {
     id: 2,
-    name: 'Arya Stark',
+    firstName: 'Arya',
+    lastName: 'Stark',
+    age: 18,
     role: '',
+    image: 'https://i.imgur.com/4YQ9Z9r.jpg'
+  },
+  {
+    id: 3,
+    firstName: 'Sansa',
+    lastName: 'Stark',
+    age: 20,
+    role: '',
+    image: 'https://i.imgur.com/4YQ9Z9r.jpg'
+  },
+  {
+    id: 4,
+    firstName: 'Bran',
+    lastName: 'Stark',
+    age: 18,
+    role: '',
+    image: 'https://i.imgur.com/4YQ9Z9r.jpg'
+  },
+  {
+    id: 5,
+    firstName: 'Cersei',
+    lastName: 'Lannister',
+    age: 35,
+    role: 'Queen of the Seven Kingdoms',
+    image: 'https://i.imgur.com/4YQ9Z9r.jpg'
+  },
+  {
+    id: 6,
+    firstName: 'Jaime',
+    lastName: 'Lannister',
+    age: 35,
+    role: 'Lord Commander of the Kingsguard',
+    image: 'https://i.imgur.com/4YQ9Z9r.jpg'
+  },
+  {
+    id: 7,
+    firstName: 'Tyrion',
+    lastName: 'Lannister',
+    age: 35,
+    role: 'Hand of the King',
     image: 'https://i.imgur.com/4YQ9Z9r.jpg'
   }
 ];
@@ -66,109 +110,67 @@ export const mockTransactions = [
 
 export const mockBarData = [
   {
-    country: 'AD',
+    city: 'Quezon City',
     'hot dog': 89,
-    'hot dogColor': 'hsl(48, 70%, 50%)',
     burger: 132,
-    burgerColor: 'hsl(276, 70%, 50%)',
     sandwich: 44,
-    sandwichColor: 'hsl(81, 70%, 50%)',
     kebab: 141,
-    kebabColor: 'hsl(38, 70%, 50%)',
     fries: 112,
-    friesColor: 'hsl(19, 70%, 50%)',
-    donut: 69,
-    donutColor: 'hsl(79, 70%, 50%)'
+    donut: 69
   },
   {
-    country: 'AE',
+    city: 'Cebu City',
     'hot dog': 26,
-    'hot dogColor': 'hsl(236, 70%, 50%)',
     burger: 7,
-    burgerColor: 'hsl(220, 70%, 50%)',
     sandwich: 34,
-    sandwichColor: 'hsl(86, 70%, 50%)',
     kebab: 102,
-    kebabColor: 'hsl(285, 70%, 50%)',
     fries: 49,
-    friesColor: 'hsl(45, 70%, 50%)',
-    donut: 33,
-    donutColor: 'hsl(172, 70%, 50%)'
+    donut: 33
   },
   {
-    country: 'AF',
+    city: 'Marikina City',
     'hot dog': 145,
-    'hot dogColor': 'hsl(178, 70%, 50%)',
     burger: 191,
-    burgerColor: 'hsl(269, 70%, 50%)',
     sandwich: 3,
-    sandwichColor: 'hsl(280, 70%, 50%)',
     kebab: 169,
-    kebabColor: 'hsl(176, 70%, 50%)',
     fries: 89,
-    friesColor: 'hsl(287, 70%, 50%)',
-    donut: 70,
-    donutColor: 'hsl(134, 70%, 50%)'
+    donut: 70
   },
   {
-    country: 'AG',
+    city: 'Davao City',
     'hot dog': 48,
-    'hot dogColor': 'hsl(30, 70%, 50%)',
     burger: 173,
-    burgerColor: 'hsl(198, 70%, 50%)',
     sandwich: 124,
-    sandwichColor: 'hsl(144, 70%, 50%)',
     kebab: 62,
-    kebabColor: 'hsl(155, 70%, 50%)',
     fries: 151,
-    friesColor: 'hsl(157, 70%, 50%)',
-    donut: 87,
-    donutColor: 'hsl(61, 70%, 50%)'
+    donut: 87
   },
   {
-    country: 'AI',
+    city: 'Makati City',
     'hot dog': 175,
-    'hot dogColor': 'hsl(262, 70%, 50%)',
     burger: 45,
-    burgerColor: 'hsl(334, 70%, 50%)',
     sandwich: 175,
-    sandwichColor: 'hsl(113, 70%, 50%)',
     kebab: 46,
-    kebabColor: 'hsl(21, 70%, 50%)',
     fries: 52,
-    friesColor: 'hsl(313, 70%, 50%)',
-    donut: 97,
-    donutColor: 'hsl(40, 70%, 50%)'
+    donut: 97
   },
   {
-    country: 'AL',
+    city: 'Pasig City',
     'hot dog': 150,
-    'hot dogColor': 'hsl(132, 70%, 50%)',
     burger: 19,
-    burgerColor: 'hsl(310, 70%, 50%)',
     sandwich: 6,
-    sandwichColor: 'hsl(93, 70%, 50%)',
     kebab: 27,
-    kebabColor: 'hsl(26, 70%, 50%)',
     fries: 44,
-    friesColor: 'hsl(24, 70%, 50%)',
-    donut: 19,
-    donutColor: 'hsl(22, 70%, 50%)'
+    donut: 19
   },
   {
-    country: 'AM',
+    city: 'Taguig City',
     'hot dog': 61,
-    'hot dogColor': 'hsl(299, 70%, 50%)',
     burger: 147,
-    burgerColor: 'hsl(280, 70%, 50%)',
     sandwich: 179,
-    sandwichColor: 'hsl(19, 70%, 50%)',
     kebab: 200,
-    kebabColor: 'hsl(184, 70%, 50%)',
     fries: 139,
-    friesColor: 'hsl(210, 70%, 50%)',
-    donut: 90,
-    donutColor: 'hsl(23, 70%, 50%)'
+    donut: 90
   }
 ];
 
@@ -177,38 +179,32 @@ export const mockPieData = [
     id: 'c',
     label: 'c',
     value: 308
-    // color: 'hsl(235, 70%, 50%)'
   },
   {
     id: 'make',
     label: 'make',
     value: 492
-    // color: 'hsl(356, 70%, 50%)'
   },
   {
     id: 'stylus',
     label: 'stylus',
     value: 261
-    // color: 'hsl(259, 70%, 50%)'
   },
   {
     id: 'scala',
     label: 'scala',
     value: 562
-    // color: 'hsl(332, 70%, 50%)'
   },
   {
     id: 'python',
     label: 'python',
     value: 35
-    // color: 'hsl(68, 70%, 50%)'
   }
 ];
 
 export const mockLineData = [
   {
     id: 'japan',
-    color: 'hsl(323, 70%, 50%)',
     data: [
       {
         x: 'plane',
@@ -262,7 +258,6 @@ export const mockLineData = [
   },
   {
     id: 'france',
-    color: 'hsl(47, 70%, 50%)',
     data: [
       {
         x: 'plane',
@@ -316,7 +311,6 @@ export const mockLineData = [
   },
   {
     id: 'us',
-    color: 'hsl(17, 70%, 50%)',
     data: [
       {
         x: 'plane',
@@ -370,7 +364,6 @@ export const mockLineData = [
   },
   {
     id: 'germany',
-    color: 'hsl(102, 70%, 50%)',
     data: [
       {
         x: 'plane',
@@ -424,7 +417,6 @@ export const mockLineData = [
   },
   {
     id: 'norway',
-    color: 'hsl(317, 70%, 50%)',
     data: [
       {
         x: 'plane',

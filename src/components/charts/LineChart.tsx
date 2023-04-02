@@ -1,15 +1,15 @@
 import { themeCharts } from '@/config/themeCharts';
-import { mockLineData } from '@/data/mockData';
 import { Box, Typography } from '@mui/material';
 import { useTheme } from '@mui/system';
 import { ResponsiveLine } from '@nivo/line';
 
 type LineChartProps = {
+  data: unknown[];
   title: string;
   isMobile?: boolean;
 };
 
-const LineChart = ({ title, isMobile = false }: LineChartProps) => {
+const LineChart = ({ data, title, isMobile = false }: LineChartProps) => {
   const theme = useTheme();
   const colors = theme.palette;
 
@@ -31,16 +31,18 @@ const LineChart = ({ title, isMobile = false }: LineChartProps) => {
         </Typography>
       </Box>
 
-      <Box height="250px" mt="-20px">
+      <Box height={250} mt={-2.5}>
         <ResponsiveLine
-          data={mockLineData}
+          data={data}
           theme={themeCharts({
             textColor: colors.text.primary,
             primaryColor: colors.primary.main,
             backgroundColor: colors.background.default
           })}
           motionConfig="wobbly"
-          curve="natural"
+          enableGridX={false}
+          enableGridY={false}
+          enableArea={true}
           // enablePoints={false}
           margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
           xScale={{ type: 'point' }}

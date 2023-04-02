@@ -1,15 +1,15 @@
-import { mockBarData } from '@/data/mockData';
 import { ResponsiveBar } from '@nivo/bar';
 import { useTheme } from '@mui/system';
 import { themeCharts } from '@/config/themeCharts';
 import { Box, Typography } from '@mui/material';
 
 type BarChartProps = {
+  data: unknown[];
   title: string;
   isMobile?: boolean;
 };
 
-const BarChart = ({ title, isMobile = false }: BarChartProps) => {
+const BarChart = ({ data, title, isMobile = false }: BarChartProps) => {
   const theme = useTheme();
   const colors = theme.palette;
 
@@ -31,63 +31,31 @@ const BarChart = ({ title, isMobile = false }: BarChartProps) => {
         </Typography>
       </Box>
 
-      <Box height="250px" mt="-20px">
+      <Box height={250} mt={-2.5}>
         <ResponsiveBar
-          data={mockBarData}
+          data={data}
           theme={themeCharts({
             textColor: colors.text.primary,
             primaryColor: colors.primary.main,
             backgroundColor: colors.background.default
           })}
           motionConfig="wobbly"
+          enableGridX={false}
+          enableGridY={false}
           groupMode="grouped"
           keys={['hot dog', 'burger', 'sandwich', 'kebab', 'fries', 'donut']}
-          indexBy="country"
+          indexBy="city"
           margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
           padding={0.3}
-          // valueScale={{ type: 'linear' }}
-          // indexScale={{ type: 'band', round: true }}
-          // defs={[
-          //   {
-          //     id: 'dots',
-          //     type: 'patternDots',
-          //     background: 'inherit',
-          //     color: '#38bcb2',
-          //     size: 4,
-          //     padding: 1,
-          //     stagger: true
-          //   },
-          //   {
-          //     id: 'lines',
-          //     type: 'patternLines',
-          //     background: 'inherit',
-          //     color: '#eed312',
-          //     rotation: -45,
-          //     lineWidth: 6,
-          //     spacing: 10
-          //   }
-          // ]}
-          // fill={[
-          //   {
-          //     match: {
-          //       id: 'fries'
-          //     },
-          //     id: 'dots'
-          //   },
-          //   {
-          //     match: {
-          //       id: 'sandwich'
-          //     },
-          //     id: 'lines'
-          //   }
-          // ]}
-          // axisTop={null}
-          // axisRight={null}
+          valueScale={{ type: 'linear' }}
+          indexScale={{ type: 'band', round: true }}
+          axisTop={null}
+          axisRight={null}
           axisBottom={{
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: 'country',
+            legend: 'city',
             legendPosition: 'middle',
             legendOffset: 32
           }}
@@ -101,10 +69,7 @@ const BarChart = ({ title, isMobile = false }: BarChartProps) => {
           }}
           labelSkipWidth={12}
           labelSkipHeight={12}
-          // labelTextColor={{
-          //   from: 'color',
-          //   modifiers: [['darker', 1.6]]
-          // }}
+          labelTextColor={colors.text.secondary}
           legends={[
             {
               dataFrom: 'keys',
@@ -132,9 +97,7 @@ const BarChart = ({ title, isMobile = false }: BarChartProps) => {
           role="application"
           ariaLabel="bar-chart"
           barAriaLabel={function (e) {
-            return (
-              e.id + ': ' + e.formattedValue + ' in country: ' + e.indexValue
-            );
+            return e.id + ': ' + e.formattedValue + ' in city: ' + e.indexValue;
           }}
         />
       </Box>

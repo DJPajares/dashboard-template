@@ -1,15 +1,15 @@
-import { mockPieData } from '@/data/mockData';
 import { useTheme } from '@mui/system';
 import { ResponsivePie } from '@nivo/pie';
 import { Box, Typography } from '@mui/material';
 import { themeCharts } from '@/config/themeCharts';
 
 type PieChartProps = {
+  data: unknown[];
   title: string;
   isMobile?: boolean;
 };
 
-const PieChart = ({ title, isMobile = false }: PieChartProps) => {
+const PieChart = ({ data, title, isMobile = false }: PieChartProps) => {
   const theme = useTheme();
   const colors = theme.palette;
 
@@ -31,16 +31,16 @@ const PieChart = ({ title, isMobile = false }: PieChartProps) => {
         </Typography>
       </Box>
 
-      <Box height="250px" mt="-20px">
+      <Box height={250} mt={-2.5}>
         <ResponsivePie
-          data={mockPieData}
+          data={data}
           theme={themeCharts({
             textColor: colors.text.primary,
             primaryColor: colors.primary.main,
             backgroundColor: colors.background.default
           })}
           motionConfig="wobbly"
-          margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+          margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
           innerRadius={0.4} // add to make donut
           padAngle={0.7}
           cornerRadius={3}
@@ -55,105 +55,36 @@ const PieChart = ({ title, isMobile = false }: PieChartProps) => {
           arcLinkLabelsThickness={2}
           arcLinkLabelsColor={{ from: 'color' }}
           arcLabelsSkipAngle={10}
-          arcLabelsTextColor={{
-            from: 'color',
-            modifiers: [['darker', 2]]
-          }}
-          defs={[
-            {
-              id: 'dots',
-              type: 'patternDots',
-              background: 'inherit',
-              color: 'rgba(255, 255, 255, 0.3)',
-              size: 4,
-              padding: 1,
-              stagger: true
-            },
-            {
-              id: 'lines',
-              type: 'patternLines',
-              background: 'inherit',
-              color: 'rgba(255, 255, 255, 0.3)',
-              rotation: -45,
-              lineWidth: 6,
-              spacing: 10
-            }
-          ]}
-          fill={[
-            {
-              match: {
-                id: 'ruby'
-              },
-              id: 'dots'
-            },
-            {
-              match: {
-                id: 'c'
-              },
-              id: 'dots'
-            },
-            {
-              match: {
-                id: 'go'
-              },
-              id: 'dots'
-            },
-            {
-              match: {
-                id: 'python'
-              },
-              id: 'dots'
-            },
-            {
-              match: {
-                id: 'scala'
-              },
-              id: 'lines'
-            },
-            {
-              match: {
-                id: 'lisp'
-              },
-              id: 'lines'
-            },
-            {
-              match: {
-                id: 'elixir'
-              },
-              id: 'lines'
-            },
-            {
-              match: {
-                id: 'javascript'
-              },
-              id: 'lines'
-            }
-          ]}
-          legends={[
-            {
-              anchor: 'bottom',
-              direction: 'row',
-              justify: false,
-              translateX: 0,
-              translateY: 56,
-              itemsSpacing: 0,
-              itemWidth: 100,
-              itemHeight: 18,
-              itemTextColor: colors.text.primary,
-              itemDirection: 'left-to-right',
-              itemOpacity: 1,
-              symbolSize: 18,
-              symbolShape: 'circle',
-              effects: [
-                {
-                  on: 'hover',
-                  style: {
-                    itemTextColor: colors.text.primary
-                  }
-                }
-              ]
-            }
-          ]}
+          arcLabelsTextColor={colors.text.secondary}
+          colors={{ scheme: 'nivo' }}
+          // legends={[
+          //   {
+          //     anchor: 'top',
+          //     // direction: 'row',
+          //     direction: 'column',
+          //     justify: false,
+          //     // translateX: 0,
+          //     // translateY: 56,
+          //     translateX: 200,
+          //     translateY: 30,
+          //     itemsSpacing: 5,
+          //     itemWidth: 80,
+          //     itemHeight: 18,
+          //     itemTextColor: colors.text.primary,
+          //     itemDirection: 'left-to-right',
+          //     itemOpacity: 1,
+          //     symbolSize: 12,
+          //     symbolShape: 'circle',
+          //     effects: [
+          //       {
+          //         on: 'hover',
+          //         style: {
+          //           itemTextColor: colors.text.primary
+          //         }
+          //       }
+          //     ]
+          //   }
+          // ]}
         />
       </Box>
     </Box>

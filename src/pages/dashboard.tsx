@@ -5,6 +5,7 @@ import Header from '@/components/global/Header';
 import { Box, useMediaQuery, useTheme } from '@mui/material';
 import Head from 'next/head';
 import Card from '@/components/charts/Card';
+import { mockBarData, mockLineData, mockPieData } from '@/data/mockData';
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -53,15 +54,27 @@ const Dashboard = () => {
           </Box>
 
           <Box gridColumn="span 12">
-            <BarChart title="Sales Quantity" isMobile={isMobile} />
+            <BarChart
+              data={mockBarData}
+              title="Sales Quantity"
+              isMobile={isMobile}
+            />
           </Box>
 
-          <Box gridColumn="span 6">
-            <PieChart title="Used Tech" isMobile={isMobile} />
+          <Box gridColumn="span 4">
+            <PieChart
+              data={mockPieData}
+              title="Used Tech"
+              isMobile={isMobile}
+            />
           </Box>
 
-          <Box gridColumn="span 6">
-            <LineChart title="Transportation" isMobile={isMobile} />
+          <Box gridColumn="span 8">
+            <LineChart
+              data={mockLineData}
+              title="Transportation"
+              isMobile={isMobile}
+            />
           </Box>
         </Box>
       </Box>

@@ -39,7 +39,6 @@ const colors = {
     800: '#192234',
     900: '#080b11'
   },
-
   yellow: {
     100: '#fffde7',
     200: '#fff9c4',
@@ -399,7 +398,7 @@ export const themeSettings = (mode: DarkModeProps) => {
             },
             text: {
               primary: colors.white,
-              secondary: colors.grey[400]
+              secondary: colors.grey[700]
             }
           }
         : {
@@ -416,7 +415,7 @@ export const themeSettings = (mode: DarkModeProps) => {
             },
             text: {
               primary: colors.grey[700],
-              secondary: colors.grey[600]
+              secondary: colors.grey[700]
             }
           })
     },
