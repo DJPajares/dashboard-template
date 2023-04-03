@@ -22,9 +22,7 @@ const Inventories = () => {
       </Head>
 
       <Box p={2}>
-        <Box py={2}>
-          <Header title="Inventories" subtitle="Manage inventories" />
-        </Box>
+        <Header title="Inventories" subtitle="Manage inventories" />
 
         <Box py={4}>
           <Box>

@@ -19,10 +19,7 @@ const Dashboard = () => {
       </Head>
 
       <Box p={2}>
-        {/* HEADER */}
-        <Box py={2}>
-          <Header title="Dashboard" subtitle="Welcome to the dashboard" />
-        </Box>
+        <Header title="Dashboard" subtitle="Welcome to the dashboard" />
 
         {/* CHARTS */}
         <Box

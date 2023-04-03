@@ -9,7 +9,6 @@ const Users = () => {
   const colors = theme.palette;
 
   const columns: GridColDef[] = [
-    // { field: 'id', headerName: 'ID', width: 70 },
     {
       field: 'image',
       headerName: 'Image',
@@ -19,13 +18,13 @@ const Users = () => {
     },
     { field: 'firstName', headerName: 'First name', width: 130 },
     { field: 'lastName', headerName: 'Last name', width: 130 },
-    { field: 'role', headerName: 'Role', width: 300 },
     {
       field: 'age',
       headerName: 'Age',
       type: 'number',
       width: 90
-    }
+    },
+    { field: 'role', headerName: 'Role', width: 300 }
   ];
 
   return (
@@ -35,13 +34,12 @@ const Users = () => {
       </Head>
 
       <Box p={2}>
-        <Box py={2}>
-          <Header title="Users" subtitle="Manage users" />
-        </Box>
+        <Header title="Users" subtitle="Manage users" />
 
         <Box py={4}>
           <Box>
             <DataGrid
+              checkboxSelection
               autoHeight
               columns={columns}
               rows={mockDataUsers}
