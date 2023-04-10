@@ -3,8 +3,11 @@ import { Avatar, Box, Typography, useTheme } from '@mui/material';
 import { DataGrid, GridColDef, GridRowsProp } from '@mui/x-data-grid';
 import Head from 'next/head';
 import { mockDataUsers } from '@/data/mockData';
+import { InferGetServerSidePropsType } from 'next';
 
-const Users = () => {
+const Users = ({
+  data
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const theme = useTheme();
   const colors = theme.palette;
 
@@ -42,7 +45,7 @@ const Users = () => {
               checkboxSelection
               autoHeight
               columns={columns}
-              rows={mockDataUsers}
+              rows={data}
               sx={{
                 borderColor: colors.background.paper,
                 '& .MuiDataGrid-columnHeaders': {
@@ -66,3 +69,15 @@ const Users = () => {
 };
 
 export default Users;
+
+export const getServerSideProps = async () => {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const res = await fetch(`${apiUrl}/api/users`);
+  const data = await res.json();
+
+  return {
+    props: {
+      data
+    }
+  };
+};
