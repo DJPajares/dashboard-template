@@ -21,6 +21,7 @@ const Users = ({
     },
     { field: 'firstName', headerName: 'First name', width: 130 },
     { field: 'lastName', headerName: 'Last name', width: 130 },
+    { field: 'email', headerName: 'Email', width: 200 },
     {
       field: 'age',
       headerName: 'Age',
@@ -72,7 +73,7 @@ export default Users;
 
 export const getServerSideProps = async () => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  const res = await fetch(`${apiUrl}/api/users`);
+  const res = await fetch(`${apiUrl}/api/user/`);
   const data = await res.json();
 
   return {
